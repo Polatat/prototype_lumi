@@ -1,0 +1,30 @@
+
+# Python virtual environment
+# Never commit your environment folder
+.venv/
+env/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log and environment variable files
+# These often contain sensitive information
+*.log
+.env
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# IDE and editor specific files
+.idea/ # For PyCharm/IntelliJ
+.project
+.classpath
+.settings/
