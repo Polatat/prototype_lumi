@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 This project uses a powerful Large Language Model to generate text. Due to its large file size, the model is not included in this Git repository. You must download it manually.
 
-Model Used: Nous-Hermes-2-SOLAR-10.7B-GGUF on Huggyface
+Model Used: Nous-Hermes-2-SOLAR-10.7B-GGUF on Huggingface
 
 File to Download: Download the nous-hermes-2-solar-10.7b.Q4_K_M.gguf version from the "Files and versions" tab.
 
