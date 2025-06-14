@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        .header, .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .report-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .interpreted-by {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .details-grid div {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .details-grid strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .results-box {
+            background-color: #eef7ff;
+            border: 1px solid #b3d7ff;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .genetic-info p {
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .risk-chart-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .risk-bar {
+            width: 5.3%;
+            background-color: #d9534f;
+            height: 20px;
+            border-radius: 5px;
+            text-align: right;
+            line-height: 20px;
+            color: white;
+            padding-right: 5px;
+            box-sizing: border-box;
+        }
+        .risk-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .increased-risk-table th {
+            font-size: 14px;
+        }
+        .increased-risk-table td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">Organization Logo</div>
+        <div><strong>Technical Report</strong></div>
+    </div>
+
+    <div class="interpreted-by">INTERPRETED BY LuminaGen Al</div>
+
+    <div class="section">
+        <div class="details-grid">
+            <div>
+                <strong>Patient Details:</strong>
+                Name: N/A<br>
+                ID: XXXXXXX<br>
+                Sex: Male<br>
+                Date of birth: 10 Nov 2001<br>
+                Sample type: Blood
+            </div>
+            <div>
+                <strong>Test ordered by:</strong>
+                Name: Dr. Phong<br>
+                Organisation: Siriraj hospital<br>
+                Telephone: XXXXXXXXXX
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">RESULTS:</div>
+        <div class="results-box">{{ result_summary }}</div>
+    </div>
+    
+    <div class="section">
+         <div class="details-grid">
+            <div>
+                <div class="logo">LAB-test Logo</div>
+            </div>
+            <div>
+                <strong>Test carried out by:</strong>
+                Laboratory: Gentest TH<br>
+                Telephone: XXXXXXXXXX<br>
+                Date of test: 10 April 2025<br>
+                Signature: Tester
+            </div>
+        </div>
+    </div>
+
+    <div class="section genetic-info">
+        <div class="section-title">GENETIC INFORMATION</div>
+        <p>{{ genetic_information }}</p>
+    </div>
+
+
+    <div class="section">
+        <div class="section-title">HISTORICAL RECORDS</div>
+        <table>
+            <tr>
+                <th>Patient Demographics</th>
+                <td>(name, DOB, contact, insurance)</td>
+            </tr>
+            <tr>
+                <th>HEALTH RECORDS</th>
+                <td>
+                    <strong>Problem Lists</strong> (current & past health issues)<br>
+                    <strong>Medication Lists</strong> (current, past, dosage, allergies)<br>
+                    • Immunization Records<br>
+                    <strong>Vital Signs</strong> (temperature, BP, heart rate, etc.)<br>
+                    • Progress Notes/Clinical Notes
+                </td>
+            </tr>
+            <tr>
+                <th>MEDICAL HISTORY</th>
+                <td>
+                    • Past illnesses<br>
+                    • Surgeries<br>
+                    • Family history
+                </td>
+            </tr>
+            <tr>
+                <th>ENVIRONMENTAL FACTORS</th>
+                <td>
+                    • Life Style Factors<br>
+                    • Exposure to Chemical and Toxins
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">DETAILED GENOMIC RESULTS</div>
+        
+        <h3>A. POLYGENIC DISEASE RISK</h3>
+        <p>Polygenic risk score (PRS) is a genetic screening test used to potentially identify genetic susceptibility, PRS score is aims to scoring the risk of developing the disease.</p>
+        <p>For instance, coronary artery disease, atrial fibrillation, type 2 diabetes, inflammatory bowel disease, or breast cancer.</p>
+        <p>PRS potentially help identify treatement targets for the precision medicine.</p>
+        
+        <p><strong>DISEASE: Non-communicable disease</strong></p>
+        <div class="risk-chart-container">
+            <div class="risk-bar">5.3%</div>
+        </div>
+        <div class="risk-labels">
+            <span>0</span>
+            <span>20</span>
+            <span>40</span>
+            <span>60</span>
+            <span>80</span>
+            <span>100</span>
+        </div>
+        <p><strong>THE PATIENT'S RESULT</strong></p>
+
+        <h3>B. DISEASE WITH AN INCREASED POLYGENIC RISK*</h3>
+        <p><em>Noted: In case of the patient got high polygenic risk score</em></p>
+        
+        <table class="increased-risk-table">
+            <thead>
+                <tr>
+                    <th>DISEASE</th>
+                    <th>RISK INTERPRETATION:</th>
+                    <th>DISEASE INFORMATION:</th>
+                    <th>INTERVENTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4"> Cardiovascular Disease </td>
+                    <td rowspan="4"></td>
+                    <td rowspan="4"></td>
+                    <td>
+                        <strong>TREATMENT PLAN</strong>
+                        <ul>
+                            <li>Blood Transfusions</li>
+                            <li>Folic Acid Supplements</li>
+                            <li>Stem Cell Transplant (Bone Marrow Transplant)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>GENETIC CONSOLING</strong>
+                        <ul>
+                            <li>Explanation of what thalassemia is</li>
+                            <li>Risk Assessment and Carrier Status</li>
+                            <li>Carrier Testing</li>
+                            <li>Preimplantation Genetic Diagnosis</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>SURVEILLANCE</strong>
+                        <ul>
+                            <li>Regular Blood Counts (CBC)</li>
+                            <li>Serum Ferritin</li>
+                            <li>Electrocardiogram (ECG) and Echocardiogram</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
