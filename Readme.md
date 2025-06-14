@@ -51,13 +51,15 @@ Place the downloaded .gguf file inside this models folder.
 
 The project structure should look like this:
 
+
+```bash
 prototype_lumi/
 ├── models/
 │   └── nous-hermes-2-solar-10.7b.Q4_K_M.gguf
 ├── luminagen_ai/
 │   └── ...
 └── README.md
-
+``` 
 
 **5. Run the Application**
 
