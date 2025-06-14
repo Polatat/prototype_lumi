@@ -6,7 +6,7 @@ The AI was developed to address several key issues in Thailand, including the se
 
 ### How It Works
 
-The platform takes a patient's Whole Genome Sequencing (WGS) data as input and uses deep learning algorithms to automatically analyze and interpret genetic variants against international databases like ClinGen, gnomAD, and OMIM.
+The platform takes a patient's Whole Genome Sequencing (WGS) data as input and uses a Large Language Model (LLM) to automatically analyze and interpret genetic variants against international databases like ClinGen, gnomAD, and OMIM.
 
 * **For Medical Professionals**: LuminaGen AI generates a technical report with "Key takeaway" summaries to help speed up decision-making, along with a statistical report that includes metrics like Polygenic Risk Score.
 
@@ -14,4 +14,54 @@ The platform takes a patient's Whole Genome Sequencing (WGS) data as input and u
 
 The ultimate goal of LuminaGen AI is to reduce the workload for doctors, improve doctor-patient communication, and elevate the quality of genetic healthcare services in Thailand.
 
+---
 
+### Setup and Installation
+
+**1. Clone the Repository**
+```bash
+git clone [https://github.com/Polatat/prototype_lumi.git](https://github.com/Polatat/prototype_lumi.git)
+cd prototype_lumi
+```
+
+**2. Set Up the Environment**
+
+```bash
+# Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Install required packages
+pip install -r requirements.txt
+```
+
+**3. Set Up the Environment**
+
+This project uses a powerful Large Language Model to generate text. Due to its large file size, the model is not included in this Git repository. You must download it manually.
+
+Model Used: Nous-Hermes-2-SOLAR-10.7B-GGUF on Huggyface
+
+File to Download: Download the nous-hermes-2-solar-10.7b.Q4_K_M.gguf version from the "Files and versions" tab.
+
+**4. Place the Model**
+
+Create a folder named models in the root of the project directory.
+
+Place the downloaded .gguf file inside this models folder.
+
+The project structure should look like this:
+
+prototype_lumi/
+├── models/
+│   └── nous-hermes-2-solar-10.7b.Q4_K_M.gguf
+├── luminagen_ai/
+│   └── ...
+└── README.md
+
+
+**5. Run the Application**
+
+```bash
+python -m luminagen_ai.main
+
+```
