@@ -80,6 +80,7 @@
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f2f2f2;
@@ -87,6 +88,7 @@
         ul {
             padding-left: 20px;
             margin: 5px 0;
+            list-style-position: inside;
         }
         .risk-chart-container {
             width: 100%;
@@ -111,19 +113,35 @@
             font-size: 12px;
             margin-top: 5px;
         }
-        .increased-risk-table th {
+        .increased-risk-table th, .increased-risk-table strong {
             font-size: 14px;
         }
         .increased-risk-table td {
             vertical-align: top;
+        }
+        .risk-box {
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+            border: 1px solid;
+        }
+        .high-risk {
+            background-color: #d9534f; /* Red */
+            border-color: #d43f3a;
+        }
+        .low-risk {
+            background-color: #5cb85c; /* Green */
+            border-color: #4cae4c;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-
-#pnglogo
         <div class="logo">Organization Logo</div>
         <div><strong>Technical Report</strong></div>
     </div>
@@ -138,7 +156,7 @@
                 ID: <br>
                 Sex: <br>
                 Date of birth: <br>
-                Sample type: 
+                Sample type:
             </div>
             <div>
                 <strong>Test Ordered:</strong>
@@ -149,7 +167,7 @@
         </div>
     </div>
 
-      <div class="header">
+      <div class="section">
          <div class="details-grid">
             <div>
                 <div class="logo">Laboratory Logo</div>
@@ -180,25 +198,25 @@
         <table>
             <tr>
                 <th>PATIENT DEMOGRAPHICS</th>
-                <td> (Name, Date of Birth, Contact, Insurance)</td>
+                <td colspan="6"> (Name, Date of Birth, Contact, Insurance)</td>
             </tr>
             <tr>
                 <th>HEALTH RECORDS</th>
-                <td>
+                <td colspan="6">
                     <strong>Problem Lists</strong> (Health issues)<br>
                     <strong>Medication Lists</strong>
                     - Phamacological History<br>
                     - Immunization Records<br>
                     - Allergies<br>
-            </tr>
-            <tr>
-                <th>Clinical Notes</th>
-                    <td>colspan="6"</td>
                 </td>
             </tr>
             <tr>
+                <th>Clinical Notes</th>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
                 <th>MEDICAL HISTORY</th>
-                <td>
+                <td colspan="6">
                     - Underlying Diseases<br>
                     - Surgeries<br>
                     - Family history<br>
@@ -206,7 +224,7 @@
             </tr>
             <tr>
                 <th>ENVIRONMENTAL FACTORS</th>
-                <td>
+                <td colspan="6">
                     - Life Style Factors<br>
                     - Exposure to Chemical and Toxins<br>
                 </td>
@@ -216,61 +234,62 @@
 
     <div class="section">
         <div class="section-title">DETAILED GENOMIC RESULTS</div>
-        
+
         <h3>A. POLYGENIC DISEASE RISK</h3>
         <p>Polygenic risk score (PRS) is a genetic screening test used to potentially identify genetic susceptibility, PRS score is aims to scoring the risk of developing the disease.</p>
         <p>For instance, coronary artery disease, atrial fibrillation, type 2 diabetes, inflammatory bowel disease, or breast cancer.</p>
         <p>PRS potentially help identify treatement targets for the precision medicine.</p>
-        
+
         <p><strong>DISEASE: Non-communicable disease</strong></p>
 
-        #HighRiskBox
-        #LowRiskBox
-        
+        <div class="risk-box high-risk">
+            HIGH RISK
+        </div>
+
+        <div class="risk-box low-risk">
+            LOW RISK
+        </div>
+
+
         <h3>B. DISEASE WITH AN INCREASED POLYGENIC RISK*</h3>
-        
+
         <table class="increased-risk-table">
             <thead>
                 <tr>
                     <th>DISEASE</th>
-                    <th>RISK INTERPRETATION:</th>
-                    <th>DISEASE INFORMATION:</th>
-                    <th>INTERVENTIONS</th>
+                    <th>RISK INTERPRETATION</th>
+                    <th>DISEASE INFORMATION</th>
+                    <th>TREATMENT PLAN</th>
+                    <th>GENETIC COUNSELING</th>
+                    <th>SURVEILLANCE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td rowspan="4"> Cardiovascular Disease </td>
-                    <td rowspan="4"></td>
-                    <td rowspan="4"></td>
+                    <td>Cardiovascular Disease</td>
+                    <td><!-- Risk Interpretation Content --></td>
+                    <td><!-- Disease Information Content --></td>
                     <td>
-                        <th>TREATMENT PLAN</th>
-                        <td>
-                            - Blood Transfusions<br>
-                            - Folic Acid Supplements<br>
-                            - Stem Cell Transplant (Bone Marrow Transplant)<br>
-                        </td>
+                        <ul>
+                            <li>Blood Transfusions</li>
+                            <li>Folic Acid Supplements</li>
+                            <li>Stem Cell Transplant (Bone Marrow Transplant)</li>
+                        </ul>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <th>GENETIC CONSOLING</th>
-                        <td>
-                           - Explanation<br>
-                           - Risk Assessment and Carrier Status<br>
-                           - Carrier Testing<br>
-                           - Preimplantation Genetic Diagnosis<br>
-                        </td>
+                        <ul>
+                            <li>Explanation</li>
+                            <li>Risk Assessment and Carrier Status</li>
+                            <li>Carrier Testing</li>
+                            <li>Preimplantation Genetic Diagnosis</li>
+                        </ul>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <th>SURVEILLANCE</th>
-                        <td>
-                            - Regular Blood Counts (CBC)<br>
-                            - Serum Ferritin<br>
-                            - Electrocardiogram (ECG) and Echocardiogram<br>
-                        </td>
+                        <ul>
+                            <li>Regular Blood Counts (CBC)</li>
+                            <li>Serum Ferritin</li>
+                            <li>Electrocardiogram (ECG) and Echocardiogram</li>
+                        </ul>
                     </td>
                 </tr>
             </tbody>

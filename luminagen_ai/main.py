@@ -12,8 +12,8 @@ def main():
     MODEL_PATH = "models/nous-hermes-2-solar-10.7b.Q4_K_M.gguf" 
 
     # Patient data for this run
-    PATIENT_GENE = "BRCA2"
-    PATIENT_VARIANT = "p.Ile2105Tyrfs" # Example variant for alpha-thalassemia
+    PATIENT_GENE = "PCSK9"
+    PATIENT_VARIANT = "c.-73A>G" # Example variant for alpha-thalassemia
 
     # File paths
     REPORT_TEMPLATE = "report_test.html"
