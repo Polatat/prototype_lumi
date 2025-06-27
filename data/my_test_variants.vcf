@@ -1,0 +1,9 @@
+##fileformat=VCFv4.2
+##source=LuminaGen_Manual_Test
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene name associated with the variant">
+##INFO=<ID=CLNSIG,Number=1,Type=String,Description="Clinical significance of the variant">
+
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+16	23603525	rs12345	C	T	100	PASS	GENE=HBA1;CLNSIG=Pathogenic
+17	43091729	rs54321	G	A	100	PASS	GENE=BRCA1;CLNSIG=Pathogenic
+2	135899933	rs7412	C	T	100	PASS	GENE=APOE;CLNSIG=Benign

@@ -142,7 +142,7 @@
 <body>
 
     <div class="header">
-        <div class="logo">Organization Logo</div>
+        <div class="logo"><img src="{{ logo_data_uri }}" alt="ReDiX AI Logo" style="max-width: 150px; height: auto;"></div>
         <div><strong>Technical Report</strong></div>
     </div>
 
@@ -167,30 +167,38 @@
         </div>
     </div>
 
-      <div class="section">
-         <div class="details-grid">
-            <div>
-                <div class="logo">Laboratory Logo</div>
+
+
+    <!-- This is a conditional block. It checks if variants were found. -->
+    {% if variants_found %}
+        
+        <!-- This is a loop. It will repeat for each variant found in the VCF. -->
+        {% for result in all_results %}
+            <div class="section">
+                <div class="section-title">RESULTS:</div>
+                <div class="results-box">{{ result.summary }}</div>
             </div>
-            <div>
-                Laboratory Organization: <br>
-                Contact: <br>
-                Date of Test: <br>
-                Signature:
+
+            <div class="section genetic-info">
+                <div class="section-title">GENETIC INFORMATION</div>
+                <p>{{ result.interpretation }}</p>
             </div>
+        {% endfor %}
+
+    {% else %}
+        
+        <!-- This part will only show if no variants were found. -->
+        <div class="section">
+            <div class="section-title">RESULTS:</div>
+            <div class="results-box">{{ result_summary }}</div>
         </div>
-    </div>
 
+        <div class="section genetic-info">
+            <div class="section-title">GENETIC INFORMATION</div>
+            <p>{{ genetic_information }}</p>
+        </div>
 
-    <div class="section">
-        <div class="section-title">RESULTS:</div>
-        <div class="results-box">{{ result_summary }}</div>
-    </div>
-
-    <div class="section genetic-info">
-        <div class="section-title">GENETIC INFORMATION</div>
-        <p>{{ genetic_information }}</p>
-    </div>
+    {% endif %}
 
 
     <div class="section">
