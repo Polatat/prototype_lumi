@@ -1,0 +1,6 @@
+llama-cpp-python
+pandas
+numpy
+Jinja2
+pysam
+typer[all]

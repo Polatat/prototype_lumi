@@ -1,0 +1,2 @@
+[console_scripts]
+luminagenai = luminagen_ai.main:app

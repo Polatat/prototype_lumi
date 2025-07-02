@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "luminagen_ai"
+version = "0.1.0"
+authors = [
+  { name="Your Name", email="your.email@example.com" },
+]
+description = "An AI-driven platform for genetic report generation."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "llama-cpp-python",
+    "pandas",
+    "numpy",
+    "Jinja2",
+    "pysam",
+    "typer[all]",
+]
+
+# This section creates the command-line command
+[project.scripts]
+luminagenai = "luminagen_ai.main:app"
+
+# This new section explicitly tells setuptools which package to install
+[tool.setuptools]
+packages = ["luminagen_ai"]
